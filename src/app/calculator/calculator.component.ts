@@ -7,9 +7,8 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './calculator.component.html',
-  styleUrl: './calculator.component.css'
+  styleUrls: ['./calculator.component.css']
 })
-
 export class CalculatorComponent {
   num1: number = 0;
   num2: number = 0;
@@ -35,5 +34,16 @@ export class CalculatorComponent {
 
   multiplicar() {
     this.resultado = this.calculatorService.multiplicar(this.num1, this.num2);
+  }
+
+  reset() {
+    this.num1 = 0;
+    this.num2 = 0;
+    this.resultado = 0;
+  }
+
+  onInputChange() {
+    this.num1 = isNaN(Number(this.num1)) ? 0 : Number(this.num1);
+    this.num2 = isNaN(Number(this.num2)) ? 0 : Number(this.num2);
   }
 }
