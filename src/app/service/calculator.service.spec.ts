@@ -19,4 +19,9 @@ describe('CalculatorService', () => {
     expect(resultado).toBe(20);
   });
   
+  it('deve retornar o valor correto ao dividir dois números', () => {
+    const resultado = service.dividir(10, 2);
+    expect(resultado).toBe(5);
+  });
+  
 });
