@@ -13,4 +13,10 @@ describe('CalculatorService', () => {
     const resultado = service.subtrair(10, 5);
     expect(resultado).toBe(5);
   });
+
+  it('deve retornar o valor correto ao multiplicar dois números', () => {
+    const resultado = service.multiplicar(4, 5);
+    expect(resultado).toBe(20);
+  });
+  
 });
