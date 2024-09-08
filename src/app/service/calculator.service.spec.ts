@@ -24,4 +24,8 @@ describe('CalculatorService', () => {
     expect(resultado).toBe(5);
   });
   
+  it('deve lançar erro ao tentar dividir por zero', () => {
+    expect(() => service.dividir(10, 0)).toThrowError('Divisão por zero');
+  });
+  
 });
