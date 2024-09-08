@@ -27,4 +27,20 @@ describe('CalculatorComponent', () => {
     component.somar();
     expect(component.resultado).toBe(8);
   });
+
+  it('deve atualizar as variáveis num1 e num2 ao digitar no input', () => {
+    const compiled = fixture.nativeElement;
+    const input1 = compiled.querySelector('input[placeholder="Número 1"]');
+    const input2 = compiled.querySelector('input[placeholder="Número 2"]');
+  
+    input1.value = '7';
+    input1.dispatchEvent(new Event('input'));
+    input2.value = '9';
+    input2.dispatchEvent(new Event('input'));
+  
+    fixture.detectChanges();
+  
+    expect(component.num1).toBe(7);
+    expect(component.num2).toBe(9);
+  });
 });
